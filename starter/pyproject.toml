@@ -1,0 +1,32 @@
+[project]
+name = "starter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "oudoubleyang", email = "oudoubleyang@outlook.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=3.0.6",
+    "torch>=2.14.1",
+]
+
+[project.scripts]
+starter = "starter:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+url = "https://mirrors.bfsu.edu.cn/pypi/web/simple"
+default = true
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://mirror.nju.edu.cn/pytorch/whl/cu132"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
